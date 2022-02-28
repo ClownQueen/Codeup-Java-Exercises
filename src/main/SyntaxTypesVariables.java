@@ -10,7 +10,7 @@ public class SyntaxTypesVariables {
         System.out.print(myString);
         System.out.print("\n");
 
-        float myNumber = (float) 3.14;
+        float myNumber = 3.14f;
         System.out.print(myNumber);
         System.out.print("\n");
 
