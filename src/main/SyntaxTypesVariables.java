@@ -24,16 +24,10 @@ public class SyntaxTypesVariables {
         System.out.println(x);
         System.out.print("\n"); **/
 
-        //char class;
-
-        /* String theNumberThree = "three";
-        Object o = theNumberThree;
-        int three = (int) o;
-        System.out.print(three); **/
-
-        /* int three = (int) "three";
-        System.out.print(three);
-        System.out.print("\n"); **/
+        String theNumberThree = "three";
+        String o = theNumberThree;
+        System.out.print(o);
+        System.out.print("\n");
 
          /* int x = 4;
         x += 5;
