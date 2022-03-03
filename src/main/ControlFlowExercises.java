@@ -43,9 +43,46 @@ public class ControlFlowExercises {
 //        }
 
         Scanner input = new Scanner(System.in);
+//
+//        boolean continuing = true;
+//        do {
+//            System.out.print("Where would you like the table to end?: ");
+//            int myInput = input.nextInt();
+//
+//            System.out.println();
+//            System.out.println("Here is your table!");
+//            System.out.println();
+//            System.out.println("number | squared | cubed");
+//            System.out.println("------ | ------- | ------");
+//            for (int i = 1; i < myInput; i++) {
+//                System.out.format("%-6d", i);
+//                System.out.print(" | ");
+//                System.out.format("%-7d", i * i);
+//                System.out.print(" | ");
+//                System.out.println(i * i * i);
+//            }
+//            System.out.println();
+//            System.out.println("Would you like another number? (y/n)");
+//            String agreement = input.next();
+//            if(!(agreement.equalsIgnoreCase("y"))){
+//                continuing = false;
+//            };
+//        }while (continuing);
 
-        System.out.print("Where would you like the table to end?: ");
-        int myInput = input.nextInt();
+        System.out.println("Please enter a Grade");
+        int numberGrade = input.nextInt();
+
+        if (numberGrade >= 88){
+            System.out.println("A");
+        } else if (numberGrade >= 80){
+            System.out.println("B");
+        } else if (numberGrade >= 67){
+            System.out.println("C");
+        } else if (numberGrade >= 60){
+            System.out.println("D");
+        } else {
+            System.out.println("F");
+        }
 
     }
 }
