@@ -17,7 +17,7 @@ public class MethodsExercises {
 //        System.out.println(mod(15, 3));
         System.out.println(multiplyWithoutSign(6, 2));
         getInteger(1, 10);
-//        getFactors();
+        System.out.println(getFactor());
 
 
 
@@ -62,20 +62,34 @@ public class MethodsExercises {
         }
     }
 
-    public static void getFactor(){
+    public static long getFactor(){
         boolean repeat = true;
-        do {
-            System.out.print("Please enter a number between 1 and 10: ");
-            Scanner input = new Scanner(System.in);
-            int numInput = input.nextInt();
-            long result = 1;
-            if (!(numInput >= 1 && numInput <= 10)){
-                getFactor();
-            } else {
-                for (int i = 1; i < numInput; i++){
-                    result*= i;
-                }
+
+        System.out.print("Please enter a number between 1 and 10: ");
+        Scanner input = new Scanner(System.in);
+        int numInput = input.nextInt();
+        long factor = 1;
+        if (!(numInput >= 1 && numInput <= 10)){
+            getFactor();
+        } else {
+            for (int i = 1; i < numInput; i++){
+                factor*= i;
             }
-        }while(repeat);
+            System.out.printf("%d! = %d\n", numInput, factor);
+        }
+        input.nextLine();
+        System.out.println("Find more factors?: (y/n)");
+        String agreement = input.nextLine();
+        if (!agreement.equalsIgnoreCase("y")){
+            return factor;
+        }
+        return getFactor();
+    }
+
+    public static int diceRoll(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Roll the Dice");
+        int rollDice = input.nextInt();
+        return rollDice;
     }
 }
