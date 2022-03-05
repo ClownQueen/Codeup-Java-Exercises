@@ -15,9 +15,10 @@ public class MethodsExercises {
 //        System.out.println("Division: " + divide(15, 5));
 //        System.out.println();
 //        System.out.println(mod(15, 3));
-        System.out.println(multiplyWithoutSign(6, 2));
-        getInteger(1, 10);
-        System.out.println(getFactor());
+//        System.out.println(multiplyWithoutSign(6, 2));
+//        getInteger(1, 10);
+//        System.out.println(getFactor());
+//        diceRoll();
 
 
 
@@ -86,10 +87,29 @@ public class MethodsExercises {
         return getFactor();
     }
 
-    public static int diceRoll(){
+    public static void diceRoll(){
         Scanner input = new Scanner(System.in);
-        System.out.println("Roll the Dice");
-        int rollDice = input.nextInt();
-        return rollDice;
+        System.out.println("How many sides are on the dice?");
+        int sides = input.nextInt();
+        System.out.println("Would you like to roll? (y/n)");
+        String agreement = input.nextLine().trim();
+        if (!agreement.equalsIgnoreCase("y")){
+            return;
+        }
+        boolean repeat = true;
+        do {
+            dice(sides);
+            System.out.print("would you like to oll again? (y/n)");
+            String repeatAgreement = input.nextLine();
+            if (!repeatAgreement.equalsIgnoreCase("y")){
+                repeat = false;
+            }
+        }while (repeat);
+    }
+
+    public static void dice(int n){
+        int die1 = (int) (java.lang.Math.random()*n + 1);
+        int die2 = (int) (java.lang.Math.random()*n + 1);
+        System.out.printf("You rolled a %d and a %d", die1, die2);
     }
 }
