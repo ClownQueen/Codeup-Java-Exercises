@@ -58,8 +58,9 @@ public class MovieApplication {
 
     private static void printMovies(Movie[] movies, String category) {
         for(Movie movie: movies){
-            if (category.length() == 0 || movie.getCategory().equalsIgnoreCase(category))
-            System.out.println(movies);
+            if (category.length() == 0 || movie.getCategory().equalsIgnoreCase(category)){
+                System.out.println(movies);
+            }
         }
         System.out.println();
     }
