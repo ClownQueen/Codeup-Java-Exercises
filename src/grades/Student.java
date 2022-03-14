@@ -1,13 +1,15 @@
 package grades;
 
+import java.util.ArrayList;
+
 public class Student {
-    private String name;
-    private int grades;
+    private final String name;
+    private final ArrayList<Integer> grades;
 
 
-    public Student(String name, int grades) {
+    public Student(String name) {
         this.name = name;
-        this.grades = grades;
+        this.grades = new ArrayList<>();
     }
 
     // returns the student's name
@@ -16,14 +18,26 @@ public class Student {
     }
     // adds the given grade to the grades property
     public void addGrade(int grade){
-
+        this.grades.add(grade);
     }
     // returns the average of the students grades
     public double getGradeAverage(){
-        return grades;
+        double sum = 0;
+        for (int grade: grades){
+            sum += grade;
+        }
+        return sum / grades.size();
     }
 
     public static void main(String[] args) {
+        Student rockwell = new Student("RockwellForest");
+        rockwell.addGrade(78);
+        rockwell.addGrade(60);
+        rockwell.getGradeAverage();
 
+        Student monument = new Student("MonumentMythos");
+        monument.addGrade(85);
+        monument.addGrade(35);
+        monument.getGradeAverage();
     }
 }
