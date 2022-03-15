@@ -1,5 +1,7 @@
 package util;
 
+import com.sun.jdi.DoubleValue;
+
 import java.util.Scanner;
 
 public class Input {
@@ -24,15 +26,16 @@ public class Input {
     }
 
     public int getInt(String prompt){
-        while(true){
-            System.out.printf("%s", prompt);
-            if (input.hasNextInt()){
-                int result = input.nextInt();
-                input.nextLine();
-                return result;
+        do {
+            try{
+                System.out.println(prompt);
+                String s = getString(prompt);
+                return Integer.valueOf(s);
+            }catch (NumberFormatException e){
+                System.out.println("Sorry but I only take numbers.");
             }
-            input.nextLine();
-        }
+        }while (true);
+
     }
 
     public int getInt(String prompt, int min, int max){
@@ -46,15 +49,15 @@ public class Input {
     }
 
     public double getDouble(String prompt){
-        while(true){
-            System.out.printf("%s", prompt);
-            if (input.hasNextDouble()){
-                double result = input.nextDouble();
-                input.nextLine();
-                return result;
+        do {
+            try{
+                System.out.println(prompt);
+                String s = getString(prompt);
+                return Double.valueOf(s);
+            }catch (NumberFormatException e){
+                System.out.println("Sorry but I only take doubles.");
             }
-            input.nextLine();
-        }
+        }while (true);
 
     }
 
